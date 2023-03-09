@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 function SideMenu() {
   const navigate = useNavigate();
   return (
-    <nav SideMenu>
+    <nav className="SideMenu" >
       <Menu
       onClick={(item) => {
         //item.key

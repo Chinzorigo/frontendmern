@@ -8,6 +8,7 @@ function Users() {
   
   const [user, setUser] = useState([]);
 
+// ***************************** API *****************************
 
 //Get user list
   const getUsers = async () => {
@@ -21,24 +22,28 @@ function Users() {
   };
 
   useEffect(() => {
+    
     getUsers();
+    
   }, []);
 
 
 // Delete user by Id
+
   const deleteUser = async (_id) => {
     // const API_URL = process.env.REACT_APP_API_URL
     try {
       await axios.delete(`http://localhost:8000/api/users/${_id}`);
     //   console.log('User deleted successfully');
-
-    // Call getUsers() again to update the list of users
+      // Call getUsers() again to update the list of users
+    
       getUsers();
     } catch (error) {
       console.log(error.message);
     }
   };
 
+// ***************************** ANT Design *****************************
 
 // Column name
   const columns = [
