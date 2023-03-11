@@ -26,12 +26,12 @@ function SideMenu() {
           {
             label: "Products",
             icon: <ShopOutlined />,
-            key: "/product",
+            key: "/products",
           },
           {
             label: "Orders",
             icon: <ShoppingCartOutlined />,
-            key: "/order",
+            key: "/orders",
           },
         ]}
       ></Menu>
