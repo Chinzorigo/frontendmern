@@ -1,17 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Menu } from "antd";
-import { DashboardOutlined, ShopOutlined, ShoppingCartOutlined, TeamOutlined } from "@ant-design/icons";
+import { DashboardOutlined, ShopOutlined, ShoppingCartOutlined, TeamOutlined, MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 
 function SideMenu() {
   const navigate = useNavigate();
+  const [collapsed, setCollapsed] = useState(false);
+
+  const toggleMenu = () => {
+    setCollapsed(!collapsed);
+  }
+
   return (
     <nav className="SideMenu" >
+            <div className="menu-toggle " onClick={toggleMenu}>
+        {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+      </div>
       <Menu
-      onClick={(item) => {
-        //item.key
-        navigate(item.key)
-      }}
+        onClick={(item) => {
+          navigate(item.key);
+        }}
+        theme="dark"
+        mode="inline"
+        inlineCollapsed={collapsed}
         items={[
           {
             label: "Dashboard",
@@ -34,7 +45,10 @@ function SideMenu() {
             key: "/orders",
           },
         ]}
-      ></Menu>
+      >
+        
+      </Menu>
+
     </nav>
   );
 }
