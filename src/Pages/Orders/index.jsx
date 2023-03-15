@@ -9,6 +9,9 @@ import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 function Orders() {
   const { orders, deleteOrders, updateOrders, editingOrders, setDataSource, isEditing,  onEditOrders, resetEditing } = useContext(OrdersContext);
 
+  
+  
+
   // const [isEditing, setIsEditing] = useState(false);
   // const [EditingOrders, setEditingOrders] = useState(null);
   // const [dataSource, setDataSource] = useState([]);
@@ -97,7 +100,7 @@ function Orders() {
   return (
     <div className="Users">
       <header className="Users-header">
-        <Button onClick={onAddOrders}>Add user</Button>
+        <Button onClick={onAddOrders}>Add Order</Button>
         <Table columns={columns} dataSource={orders}></Table>
         <UpdateModal
         isEditing={isEditing}

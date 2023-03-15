@@ -1,9 +1,27 @@
 import React from "react";
-import { Badge, Image, Space, Typography } from "antd";
+import { Menu, Dropdown, Badge, Image, Space, Typography } from "antd";
 import { BellFilled, UserOutlined, MailOutlined } from "@ant-design/icons";
+import { CgProfile } from 'react-icons/cg'; 
+import { FiSettings } from 'react-icons/fi'; 
+import { RiLogoutBoxRLine } from 'react-icons/ri'; 
 import { Link } from "react-router-dom";
 
 function AppHeader() {
+  const menu = (
+    <Menu>
+      <Menu.Item key="1"  icon={<CgProfile size={16} />}>
+        Profile
+      </Menu.Item>
+      <Menu.Item key="2" icon={<FiSettings size={16} />}>
+        Settings
+      </Menu.Item>
+      <Menu.Item key="3" icon={<RiLogoutBoxRLine size={16} />}>
+        Logout
+      </Menu.Item>
+    </Menu>
+  );
+
+
   return (
     <header className="AppHeader">
       <Link to="/">
@@ -21,7 +39,9 @@ function AppHeader() {
         <Badge count={2} dot>
           <MailOutlined style={{ fontSize: 24 }} />
         </Badge>
-        <UserOutlined style={{ fontSize: 24 }} />
+        <Dropdown overlay={menu} trigger={["click"]}>
+          <UserOutlined style={{ fontSize: 24, cursor: "pointer" }} />
+        </Dropdown>
       </Space>
     </header>
   );
