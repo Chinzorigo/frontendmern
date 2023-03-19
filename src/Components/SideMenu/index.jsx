@@ -9,46 +9,38 @@ function SideMenu() {
 
   const toggleMenu = () => {
     setCollapsed(!collapsed);
-  }
+  };
 
   return (
-    <nav className="SideMenu" >
-            <div className="menu-toggle " onClick={toggleMenu}>
+    <nav className="SideMenu">
+      <div className="menu-toggle" onClick={toggleMenu}>
         {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
       </div>
       <Menu
         onClick={(item) => {
           navigate(item.key);
         }}
-        theme="dark"
+        // theme="dark"
         mode="inline"
         inlineCollapsed={collapsed}
-        items={[
-          {
-            label: "Dashboard",
-            icon: <DashboardOutlined />,
-            key: "/",
-          },
-          {
-            label: "Users",
-            icon: <TeamOutlined />,
-            key: "/users",
-          },
-          {
-            label: "Products",
-            icon: <ShopOutlined />,
-            key: "/products",
-          },
-          {
-            label: "Orders",
-            icon: <ShoppingCartOutlined />,
-            key: "/orders",
-          },
-        ]}
       >
-        
+        <Menu.Item key="/">
+          <DashboardOutlined />
+          <span>Dashboard</span>
+        </Menu.Item>
+        <Menu.Item key="/users">
+          <TeamOutlined />
+          <span>Users</span>
+        </Menu.Item>
+        <Menu.Item key="/products">
+          <ShopOutlined />
+          <span>Products</span>
+        </Menu.Item>
+        <Menu.Item key="/orders">
+          <ShoppingCartOutlined />
+          <span>Orders</span>
+        </Menu.Item>
       </Menu>
-
     </nav>
   );
 }

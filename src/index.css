@@ -5,8 +5,9 @@ body {
 .App {
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw;
+  height: 100vh; */
+  min-height: 100vh;
 }
 
 .AppHeader {
@@ -30,26 +31,28 @@ body {
   display: flex;
   flex: 1;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: flex-start; 
+  min-height: 0;
  
   
 }
 
-.SideMenu {
+/* .SideMenu {
   
   
-}
+} */
 
 .PageContent {
   padding: 0 22px 22px 12;
+  min-height: 100%;
 
 }
 
 .menu-toggle {
-  background-color: #001529;
-  color: white;
+  /* background-color: #001529; */
+  /* color: white; */
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   padding-bottom: 1rem;
 
 }
