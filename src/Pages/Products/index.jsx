@@ -45,7 +45,8 @@ function Products() {
   // Get user list from database using express
   const getProduct = async () => {
     try {
-      const result = await axios.get(`http://localhost:8000/api/product`);
+      // const result = await axios.get(`http://localhost:8000/api/product`);
+      const result = await axios.get(`https://ecommerce4showcase-api.onrender.com/api/product`);
       setProduct(result.data.data);
     } catch (error) {
       console.log(error.message);

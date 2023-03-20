@@ -14,7 +14,8 @@ function Users() {
   const getUsers = async () => {
 
     try {
-      const result = await axios.get(`http://localhost:8000/api/users`);
+      // const result = await axios.get(`http://localhost:8000/api/users`);
+      const result = await axios.get(`https://ecommerce4showcase-api.onrender.com/api/users`);
       setUser(result.data.data);
     } catch (error) {
       console.log(error.message);
