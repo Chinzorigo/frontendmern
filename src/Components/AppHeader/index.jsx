@@ -31,7 +31,7 @@ function AppHeader() {
           src="https://logos-download.com/wp-content/uploads/2016/09/React_logo_wordmark.png"
         />
       </Link>
-      <Typography.Title>Admin Panel</Typography.Title>
+      <Typography.Title>Admin Panel - Ongoing Project</Typography.Title>
       <Space size={18}>
         <Badge count={3}>
           <BellFilled style={{ fontSize: 24 }} />

@@ -2,7 +2,7 @@ body {
   margin: 0;
 }
 
-.App {
+.Home {
   display: flex;
   flex-direction: column;
   /* width: 100vw;
